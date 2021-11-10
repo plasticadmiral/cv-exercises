@@ -1,7 +1,7 @@
 """Eigendecomposition functions."""
 
 import numpy as np
-
+import math
 
 def get_matrix_from_eigdec(e: np.ndarray, V: np.ndarray) -> np.ndarray:
     """Restore the original square symmetric matrix from eigenvalues and eigenvectors after eigenvalue decomposition.
@@ -14,7 +14,9 @@ def get_matrix_from_eigdec(e: np.ndarray, V: np.ndarray) -> np.ndarray:
         The original matrix used for eigenvalue decomposition with shape (N, N)
     """
     # START TODO #################
-    raise NotImplementedError
+    ans1 = np.dot(V, np.diag(e))
+    output = np.dot(ans1, np.linalg.inv(V))
+    return output
     # END TODO ###################
 
 
@@ -29,7 +31,8 @@ def get_euclidean_norm(v: np.ndarray) -> np.ndarray:
     """
     # START TODO #################
     # do NOT use np.linalg.norm
-    raise NotImplementedError
+    output = np.sqrt(sum(v**2))
+    return output
     # END TODO ###################
 
 
@@ -46,7 +49,8 @@ def get_dot_product(v1: np.ndarray, v2: np.ndarray) -> float:
     assert len(v1.shape) == len(v2.shape) == 1 and v1.shape == v2.shape,\
         f"Input vectors must be 1-dimensional and have the same shape, but have shapes {v1.shape} and {v2.shape}"
     # START TODO #################
-    raise NotImplementedError
+    output = np.dot(v1, v2)
+    return output
     # END TODO ###################
 
 
@@ -62,5 +66,7 @@ def get_inverse(e: np.ndarray, V: np.ndarray) -> np.ndarray:
     """
     # START TODO #################
     # Do not use np.linalg.inv, otherwise you will get no points.
-    raise NotImplementedError
+    Ans1 = np.dot(V, np.diag(1/e))
+    output = np.dot(Ans1, np.transpose(V))
+    return output
     # END TODO ###################

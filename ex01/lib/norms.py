@@ -26,13 +26,12 @@ def get_norm(p: float = 2, num_points: int = 100) -> Tuple[np.ndarray, np.ndarra
     lin_x = np.linspace(-10, 10, num_points)
     lin_y = np.linspace(-10, 10, num_points)
     X, Y = np.meshgrid(lin_x, lin_y)
-
     # X: grid of x-axis values with shape (num_points, num_points)
     # Y: grid of y-axis values with shape (num_points, num_points)
-
     # START TODO #################
     # stack the two inputs at the last axis, then compute the norm over that last axis.
-    raise NotImplementedError
+    stacked = np.stack((X, Y))
+    Z = np.linalg.norm(stacked,ord=p , axis=0)
     # END TODO ###################
 
     return X, Y, Z
