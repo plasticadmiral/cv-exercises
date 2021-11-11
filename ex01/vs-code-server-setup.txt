@@ -27,3 +27,9 @@ VSCode - remote
 	- https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 	- open terminal: ctrl j
 	- open settings: ctrl ,
+	- open command palette: ctrl shift p
+	- set python interpreter of your conda environment: 
+		ctrl shift p 
+		python select interpreter
+		choose path to your conda environment
+		complaints about not knowing numpy will be gone
