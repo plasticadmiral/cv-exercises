@@ -1,0 +1,5 @@
+ex02/code/data/
+ex02/solution/data/
+*.pth
+*.pyc
+
