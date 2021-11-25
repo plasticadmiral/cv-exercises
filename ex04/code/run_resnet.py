@@ -58,7 +58,7 @@ def validate_c(model,val_transform,device):
     # validate the model on a given corrupted dataset
 
     print(f"{args.corruption} severity {args.severity}")
-    valdir = os.path.join("./data/dataset_folder", args.corruption, str(args.severity))
+    valdir = os.path.join("/project/cv-ws2122/shared-data1/data/dataset_folder", args.corruption, str(args.severity))
     val_dataset = datasets.ImageFolder(valdir, transform=val_transform)
     val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
     loss, acc1 = validate(model,val_loader,device)
